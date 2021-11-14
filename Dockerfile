@@ -4,7 +4,7 @@ FROM node:16
 WORKDIR /usr/app
 
 #Copy and install dependency
-COPY package*.json ./
+COPY --chown=node package*.json ./
 RUN npm install
 
 #Copy app source
