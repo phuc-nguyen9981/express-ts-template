@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  express-boilerplate:
+    build: ./
+    ports:
+      - 8080:3000
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+      - /usr/app/dist
+    command: npm run start:dev
+    container_name: express-boilerplate
+
+  redis:
+    image: redis:3.2.8
